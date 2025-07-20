@@ -64,38 +64,38 @@ public class CoflConfig extends Config {
     }
 
     // ─── Highlighting ────────────────────────────────────────────────────
-    @Switch(name = "Highlight Filter Matches (AH/Trades)")
+    @Switch(name = "Highlight Filter Matches (AH/Trades)", description = "Highlight items in AH or trade screens that pass your filters")
     public static boolean loreHighlightFilterMatch = false;
 
-    @Slider(name = "Min Profit for Highlight", min = 0f, max = 10_000_000f, step = 100_000)
+    @Slider(name = "Min Profit for Highlight", description = "Minimum profit required for an item to be highlighted", min = 0f, max = 10_000_000f, step = 100_000)
     public static float loreMinProfitForHighlight = 0f;
 
-    @Switch(name = "Disable Highlighting")
+    @Switch(name = "Disable Highlighting", description = "Turn off highlighting entirely")
     public static boolean loreDisableHighlighting = false;
 
     // ─── Price Finder selection ─────────────────────────────────────────
     @Header(text = "Allowed Price Finder Algorithms", size = OptionSize.DUAL)
     public static boolean _hFinders = false;
 
-    @Switch(name = "Flipper")
+    @Switch(name = "Flipper", description = "Enable the Flipper price finder")
     public static boolean finderFlipper = true;
 
-    @Switch(name = "Sniper")
+    @Switch(name = "Sniper", description = "Enable the Sniper price finder")
     public static boolean finderSniper = true;
 
-    @Switch(name = "Sniper (Median)")
+    @Switch(name = "Sniper (Median)", description = "Enable the median-based Sniper finder")
     public static boolean finderSniperMedian = true;
 
-    @Switch(name = "User (Whitelist)")
+    @Switch(name = "User (Whitelist)", description = "Enable the user-whitelist price finder")
     public static boolean finderUserWhitelist = true;
 
-    @Switch(name = "TFM")
+    @Switch(name = "TFM", description = "Enable the TFM price finder")
     public static boolean finderTFM = true;
 
-    @Switch(name = "Stonks")
+    @Switch(name = "Stonks", description = "Enable the Stonks price finder")
     public static boolean finderStonks = true;
 
-    @Switch(name = "Craftcost")
+    @Switch(name = "Craftcost", description = "Enable the Craftcost price finder")
     public static boolean finderCraftcost = true;
 
 
@@ -111,22 +111,22 @@ public class CoflConfig extends Config {
     public static boolean _infoModChat = false;
 
     // ─── Chat & Sound ───────────────────────────────────────────────────
-    @Switch(name = "Enable Chat")
+    @Switch(name = "Enable Chat", description = "Toggle CoflSky chat output on or off")
     public static boolean modchat = false;
 
-    @Switch(name = "Display Just Profit")
+    @Switch(name = "Display Just Profit", description = "Only show the profit value in chat messages")
     public static boolean modjustProfit = true;
 
-    @Switch(name = "Play Sound On Flip")
+    @Switch(name = "Play Sound On Flip", description = "Play a notification sound when a flip is found")
     public static boolean modsoundOnFlip = true;
 
-    @Switch(name = "Short Numbers (M/k)")
+    @Switch(name = "Short Numbers (M/k)", description = "Shorten large numbers to M / k format")
     public static boolean modshortNumbers = true;
 
-    @Switch(name = "Short Item Names")
+    @Switch(name = "Short Item Names", description = "Shorten long item names in chat output")
     public static boolean modshortNames = false;
 
-    @Switch(name = "Block Ten-Second Msg")
+    @Switch(name = "Block Ten-Second Msg", description = "Suppress the 10-second cooldown message")
     public static boolean modblockTenSecMsg = false;
 
     @Text(name = "Custom Format", placeholder = "%item% -> %profit% (e.g. Drill -> 3.2m)", secure = false)
@@ -142,22 +142,22 @@ public class CoflConfig extends Config {
     @Info(text = "HUD timer display options", size = OptionSize.DUAL, type = InfoType.INFO)
     public static boolean _infoTimer = false;
 
-    @Switch(name = "Display Timer")
+    @Switch(name = "Display Timer", description = "Show the timer HUD on screen")
     public static boolean modcountdown = true;
 
-    @Slider(name = "Timer X Position (%)", min = 0f, max = 100f, step = 1)
+    @Slider(name = "Timer X Position (%)", description = "Horizontal HUD position as a percentage of screen width", min = 0f, max = 100f, step = 1)
     public static float modtimerX = 0f;
 
-    @Slider(name = "Timer Y Position (%)", min = 0f, max = 100f, step = 1)
+    @Slider(name = "Timer Y Position (%)", description = "Vertical HUD position as a percentage of screen height", min = 0f, max = 100f, step = 1)
     public static float modtimerY = 0f;
 
-    @Slider(name = "Timer Show Seconds Before Update", min = 0f, max = 60f, step = 1)
+    @Slider(name = "Timer Show Seconds Before Update", description = "Only show seconds once remaining time is below this threshold", min = 0f, max = 60f, step = 1)
     public static float modtimerSeconds = 0f;
 
-    @Slider(name = "Timer Scale", min = 0f, max = 4f, step = 1)
+    @Slider(name = "Timer Scale", description = "Overall scale factor for the timer HUD", min = 0f, max = 4f, step = 1)
     public static int modtimerScale = 1;
 
-    @Slider(name = "Timer Precision (digits)", min = 0f, max = 5f, step = 1)
+    @Slider(name = "Timer Precision (digits)", description = "Decimal precision for seconds display", min = 0f, max = 5f, step = 1)
     public static float modtimerPrecision = 0f;
 
     @Text(name = "Timer Prefix", placeholder = "Next flip in ", secure = false)
@@ -170,40 +170,40 @@ public class CoflConfig extends Config {
     @Info(text = "Advanced behaviour tweaks", size = OptionSize.DUAL, type = InfoType.INFO)
     public static boolean _infoBeh = false;
 
-    @Slider(name = "Minutes Between Blocked Msg", min = 0f, max = 127f, step = 1)
+    @Slider(name = "Minutes Between Blocked Msg", description = "Cooldown (minutes) between blocked-flip chat messages", min = 0f, max = 127f, step = 1)
     public static float modblockedMsg = 0f;
 
-    @Slider(name = "Max % Of Purse Per Flip", min = 0f, max = 100f, step = 1)
+    @Slider(name = "Max % Of Purse Per Flip", description = "Maximum percentage of purse allowed per flip", min = 0f, max = 100f, step = 1)
     public static float modmaxPercentOfPurse = 0f;
 
-    @Slider(name = "AH List Time Target (h)", min = 0f, max = 24f, step = 1)
+    @Slider(name = "AH List Time Target (h)", description = "Target listing time in hours when creating auctions", min = 0f, max = 24f, step = 1)
     public static float modahListHours = 0f;
 
-    @Slider(name = "Max Flip Items in Inventory", min = 0f, max = 54f, step = 1)
+    @Slider(name = "Max Flip Items in Inventory", description = "Maximum number of flip items allowed in inventory", min = 0f, max = 54f, step = 1)
     public static float modmaxItemsInInventory = 0f;
 
-    @Switch(name = "No Bed Delay")
+    @Switch(name = "No Bed Delay", description = "Remove the bed usage delay in private worlds")
     public static boolean modnoBedDelay = false;
 
-    @Switch(name = "Streamer Mode")
+    @Switch(name = "Streamer Mode", description = "Hide personal data while streaming")
     public static boolean modstreamerMode = false;
 
-    @Switch(name = "Auto-Start Flipper")
+    @Switch(name = "Auto-Start Flipper", description = "Automatically start the flipper after login")
     public static boolean modautoStartFlipper = false;
 
-    @Switch(name = "Normal Sold Flips")
+    @Switch(name = "Normal Sold Flips", description = "Treat sold flips as normal instead of blocked")
     public static boolean modnormalSoldFlips = false;
 
-    @Switch(name = "Temp Blacklist Spam")
+    @Switch(name = "Temp Blacklist Spam", description = "Send chat message when an item is temporarily blacklisted")
     public static boolean modtempBlacklistSpam = false;
 
-    @Switch(name = "AH-Data-Only Mode")
+    @Switch(name = "AH-Data-Only Mode", description = "Operate in data-only mode without purchasing items")
     public static boolean moddataOnlyMode = false;
 
-    @Switch(name = "Quick Sell")
+    @Switch(name = "Quick Sell", description = "Enable quick-sell button in inventory")
     public static boolean modquickSell = false;
 
-    @Switch(name = "Disable Spam Protection (⚠)")
+    @Switch(name = "Disable Spam Protection (⚠)", description = "Disable internal chat spam protection (not recommended)")
     public static boolean moddisableSpamProtection = false;
 
     /*  ───────────────────────── VISIBILITY ───────────────────────────── */
@@ -217,46 +217,46 @@ public class CoflConfig extends Config {
     @Info(text = "Item info display options", size = OptionSize.DUAL, type = InfoType.INFO)
     public static boolean _infoVis = false;
 
-    @Switch(name = "Show Cost")
+    @Switch(name = "Show Cost", description = "Display acquisition cost for each item")
     public static boolean showcost = true;
 
-    @Switch(name = "Show Estimated Profit")
+    @Switch(name = "Show Estimated Profit", description = "Display estimated profit value in GUI")
     public static boolean showestProfit = true;
 
-    @Switch(name = "Show Lowest BIN")
+    @Switch(name = "Show Lowest BIN", description = "Display current lowest BIN price")
     public static boolean showlbin = false;
 
-    @Switch(name = "Show 2nd Lowest BIN")
+    @Switch(name = "Show 2nd Lowest BIN", description = "Display the second-lowest BIN price")
     public static boolean showslbin = false;
 
-    @Switch(name = "Show Median Price")
+    @Switch(name = "Show Median Price", description = "Display median BIN price")
     public static boolean showmedPrice = false;
 
-    @Switch(name = "Show Seller Name")
+    @Switch(name = "Show Seller Name", description = "Display the seller's in-game name")
     public static boolean showseller = false;
 
-    @Switch(name = "Show Volume")
+    @Switch(name = "Show Volume", description = "Display daily sales volume for the item")
     public static boolean showvolume = true;
 
-    @Switch(name = "Show Profit %")
+    @Switch(name = "Show Profit %", description = "Display profit as a percentage")
     public static boolean showprofitPercent = true;
 
-    @Switch(name = "Show Profit (abs)")
+    @Switch(name = "Show Profit (abs)", description = "Display absolute profit in coins")
     public static boolean showprofit = false;
 
-    @Switch(name = "Show Seller Open Button")
+    @Switch(name = "Show Seller Open Button", description = "Add a button to open the seller's profile")
     public static boolean showsellerOpenBtn = true;
 
-    @Switch(name = "Show Item Lore")
+    @Switch(name = "Show Item Lore", description = "Display full item lore in tooltip")
     public static boolean showlore = true;
 
-    @Switch(name = "Hide Sold Auctions")
+    @Switch(name = "Hide Sold Auctions", description = "Hide auctions that have already sold")
     public static boolean showhideSold = false;
 
-    @Switch(name = "Hide Manipulated Items")
+    @Switch(name = "Hide Manipulated Items", description = "Hide items flagged as manipulated")
     public static boolean showhideManipulated = false;
 
-    @Slider(name = "Extra Info Fields", min = 0f, max = 5f, step = 1)
+    @Slider(name = "Extra Info Fields", description = "Number of extra info fields to show", min = 0f, max = 5f, step = 1)
     public static float showextraFields = 0f;
 
     /*  ────────────────────────── PRIVACY ─────────────────────────────── */
@@ -270,43 +270,43 @@ public class CoflConfig extends Config {
     @Info(text = "Telemetry & data collection", size = OptionSize.DUAL, type = InfoType.WARNING)
     public static boolean _infoPriv = false;
 
-    @Switch(name = "Collect Chat")
+    @Switch(name = "Collect Chat", description = "Allow collection of chat messages for analytics")
     public static boolean privacyCollectChat = true;
 
-    @Switch(name = "Collect Inventory")
+    @Switch(name = "Collect Inventory", description = "Allow collection of inventory contents")
     public static boolean privacyCollectInventory = true;
 
-    @Switch(name = "Disable Trade Storing")
+    @Switch(name = "Disable Trade Storing", description = "Do not store trade data on the server")
     public static boolean privacyDisableTradeStoring = false;
 
-    @Switch(name = "Disable Kuudra Tracking")
+    @Switch(name = "Disable Kuudra Tracking", description = "Do not track Kuudra boss runs")
     public static boolean privacyDisableKuudraTracking = false;
 
-    @Switch(name = "Collect Tab")
+    @Switch(name = "Collect Tab", description = "Collect the TAB player list for analytics")
     public static boolean privacyCollectTab = false;
 
-    @Switch(name = "Collect Scoreboard")
+    @Switch(name = "Collect Scoreboard", description = "Collect scoreboard lines for analytics")
     public static boolean privacyCollectScoreboard = true;
 
-    @Switch(name = "Collect Inv Click")
+    @Switch(name = "Collect Inv Click", description = "Collect data on inventory clicks")
     public static boolean privacyCollectInvClick = false;
 
-    @Switch(name = "Collect Chat Clicks")
+    @Switch(name = "Collect Chat Clicks", description = "Collect data on chat component clicks")
     public static boolean privacyCollectChatClicks = true;
 
-    @Switch(name = "Collect Lobby Changes")
+    @Switch(name = "Collect Lobby Changes", description = "Collect data when you change lobbies")
     public static boolean privacyCollectLobbyChanges = false;
 
-    @Switch(name = "Collect Entities")
+    @Switch(name = "Collect Entities", description = "Collect nearby entity data for analytics")
     public static boolean privacyCollectEntities = false;
 
-    @Switch(name = "Collect Location")
+    @Switch(name = "Collect Location", description = "Collect player location data")
     public static boolean privacyCollectLocation = false;
 
-    @Switch(name = "Extend Descriptions")
+    @Switch(name = "Extend Descriptions", description = "Show extended descriptions in chat output")
     public static boolean privacyExtendDescriptions = true;
 
-    @Switch(name = "Auto Start")
+    @Switch(name = "Auto Start", description = "Automatically start data collection on login")
     public static boolean privacyAutoStart = true;
 
     /*  ──────────────────────────── Cache Helpers ─────────────────────────── */
